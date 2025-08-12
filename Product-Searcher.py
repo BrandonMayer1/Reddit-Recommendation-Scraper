@@ -5,6 +5,8 @@ import json
 from urllib.parse import urlparse
 import os
 from dotenv import load_dotenv
+from praw.models import Comment
+
 
 load_dotenv()  # take environment variables from .env
 
@@ -36,7 +38,8 @@ def search_comments(url, comment_limit=5):
     submission.comment_sort = 'top'
     submission.comments.replace_more(limit=0)
     top_comments = []
-    for comment in submission.comments[:comment_limit]:
+    for comment in submission.comments.list()[:comment_limit]:
+            if isinstance(comment, Comment):
                 if comment.body and not comment.body == "[deleted]":
                     top_comments.append({
                         "text": comment.body,
@@ -74,7 +77,7 @@ def AIchat(Json, query):
         'content': query,
     },
     ])
-    print("AI RESPONSE: " + response.message.content)
+    print("AI RESPONSE: " + str(response.message.content))
 
 if __name__ == "__main__":
     query = input("You: ")
@@ -100,6 +103,7 @@ if __name__ == "__main__":
         results.append(post_data)
     
     AIchat(json.dumps(results, indent=2), query)
+    
 
 
     
