@@ -1,13 +1,18 @@
 # Reddit-Recommendation-Scraper
 ## Installation
 
--Must have OLLAMA llama3.1 installed
--"pip install praw ollama python-dotenv"
+- **OLLAMA** with **llama3.1** installed.
 -Create a Reddit app and get your client_id and client_secret.
+REDDIT_CLIENT_ID=your_client_id
+REDDIT_CLIENT_SECRET=your_client_secret
+REDDIT_USER_AGENT=your_user_agent
 
+## Installation
+npm run installAll
 
-## Run instructions
+npm build
+
 npm start
-open http://localhost:8000
+open http://localhost:3000
 
 

@@ -3,6 +3,8 @@
     "concurrently": "^9.2.0"
   },
   "scripts": {
+  "installAll": "npm install && cd backend && pip install praw ollama fastapi pydantic python-dotenv uvicorn && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
     "start": "concurrently \"cd backend && uvicorn product_searcher:app --reload\" \"cd frontend && npm start\""
   }
 }

@@ -83,6 +83,7 @@ def AIchat(Json, query):
         2. Highlight pros and cons mentioned by users.
         3. Identify the most recommended brands or models (if applicable).
         4. Give a final recommendation based on the users original Question.
+        5. Respond in markdown.
 
         Here is the JSON data: {Json}
         
