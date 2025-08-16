@@ -7,6 +7,7 @@
 
 
 ## Run instructions
-python Product-Searcher.py
+npm start
+open http://localhost:8000
 
 

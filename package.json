@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "scripts": {
+    "start": "concurrently \"cd backend && uvicorn product_searcher:app --reload\" \"cd frontend && npm start\""
+  }
+}
